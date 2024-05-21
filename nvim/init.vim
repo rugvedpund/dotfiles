@@ -1,3 +1,4 @@
+" neovim config, Rugved
 let g:python3_host_prog="/home/rugved/miniconda3/envs/pynvim/bin/python"
 
 set nocompatible
