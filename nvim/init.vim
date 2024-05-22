@@ -1,5 +1,5 @@
 " neovim config, Rugved
-let g:python3_host_prog="/home/rugved/miniconda3/envs/pynvim/bin/python"
+let g:python3_host_prog="/astro/u/rugvedpund/workarea/miniconda3/bin/python"
 
 set nocompatible
 filetype plugin on
