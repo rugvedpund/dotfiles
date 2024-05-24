@@ -92,6 +92,7 @@ Plug 'jupyter-vim/jupyter-vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'dense-analysis/ale'
 Plug 'github/copilot.vim'
+Plug 'justinmk/vim-sneak'
 " Plug 'tpope/vim-repeat'
 call plug#end()
 " =========================================================
