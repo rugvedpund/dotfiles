@@ -5,7 +5,7 @@ export NF_WORKDIR='/home/rugved/Files/LuSEE/ml/'
 export NF_DIR='/home/rugved/Files/LuSEE/normalizingflows/'
 export BMX_DATA='/home/rugved/Files/LuSEE/BMX/data/'
 
-source .my_api_keys
+source ~/.my_api_keys
 
 alias v='nvim'
 alias lg=lazygit
