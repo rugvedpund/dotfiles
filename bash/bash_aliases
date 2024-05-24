@@ -3,8 +3,9 @@ export LUSEE_DRIVE_DIR=~/Files/LuSEE/Drive/
 export LUSEE_OUTPUT_DIR=~/Files/LuSEE/simflows/outputs/
 export NF_WORKDIR='/home/rugved/Files/LuSEE/ml/'
 export NF_DIR='/home/rugved/Files/LuSEE/normalizingflows/'
-export ADS_API_TOKEN='OQMbDN37KgalaeY1hXZg3V3N2AL2XP9r8bapLF7S'
 export BMX_DATA='/home/rugved/Files/LuSEE/BMX/data/'
+
+source .my_api_keys
 
 alias v='nvim'
 alias lg=lazygit
