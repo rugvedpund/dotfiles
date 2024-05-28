@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export PATH="$HOME/.local/bin:$PATH"
 export LUSEE_DRIVE_DIR=~/Files/LuSEE/Drive/
 export LUSEE_OUTPUT_DIR=~/Files/LuSEE/simflows/outputs/
@@ -10,3 +12,5 @@ source ~/.my_api_keys
 alias v='nvim'
 alias lg=lazygit
 alias p="python"
+alias du="du -h"
+alias df="df -h"
