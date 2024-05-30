@@ -1,10 +1,8 @@
 " neovim config, Rugved
-let g:python3_host_prog="/home/rugved/miniconda3/envs/pynvim/bin/python"
-
+let g:python3_host_prog="/home/rugved/anacona3/envs/pynvim/bin/python"
 set nocompatible
 filetype plugin on
-filetype plugin indent on
-set number
+"
 set relativenumber
 set cmdheight=2
 set shiftwidth=4
@@ -30,7 +28,7 @@ set path+=**
 set path+='~/.config/' "check if this works
 set t_Co=256
 set termguicolors
-colorscheme evening
+colorscheme default
 set scrolloff=5
 " setlocal spell
 set spelllang=en_us
