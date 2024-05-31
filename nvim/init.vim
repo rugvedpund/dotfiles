@@ -34,8 +34,12 @@ set scrolloff=5
 set spelllang=en_us
 set linebreak
 set splitright
+
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 set foldmethod=indent
-set foldnestmax=1
+set foldnestmax=2
+set foldminlines=1
 
 " enable relative number only for focused windows
 :augroup numbertoggle
@@ -75,6 +79,11 @@ let g:jupyter_mapkeys = 0
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 
+let g:pythondoc_hh_expand = 1
+
+let g:jupytext_command = '/home/rugved/miniconda3/envs/pynvim/bin/jupytext'
+let g:jupytext_fmt = 'py'
+
 " vim-plug block -----------------------------------------
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'lervag/vimtex'
@@ -88,9 +97,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'dense-analysis/ale'
 Plug 'github/copilot.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'goerz/jupytext.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'ActivityWatch/aw-watcher-vim'
+" Plug 'dense-analysis/ale'
 " Plug 'tpope/vim-repeat'
 call plug#end()
 " =========================================================
@@ -100,7 +112,6 @@ let mapleader="\<Space>"
 let maplocalleader="\\"
 nnoremap <LocalLeader>c :JupyterConnect<CR>
 nnoremap <LocalLeader>x :JupyterSendCell<CR>
-nnoremap <F5> :let @+ = expand("%")<CR>:echo "file path copied to clipboard"<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>l :Lines<CR>
@@ -110,14 +121,21 @@ nnoremap <Leader>e :Ranger<CR>
 nnoremap <Leader>E :term ranger<CR>i
 nnoremap <silent> <C-l> :nohl<CR>
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-nnoremap <F9> :w<CR>:!black %<CR>
-noremap <silent> <M-h> :<C-U>TmuxNavigateLeft<CR>
 noremap <silent> <M-j> :<C-U>TmuxNavigateDown<CR>
 noremap <silent> <M-k> :<C-U>TmuxNavigateUp<CR>
 noremap <silent> <M-l> :<C-U>TmuxNavigateRight<CR>
 noremap <silent> <M-\> :<C-U>TmuxNavigatePrevious<CR>
+noremap <silent> <M-h> :<C-U>TmuxNavigateLeft<CR>
 nnoremap <F1> :%s///g<Left><Left>
+nnoremap <F5> :source ~/.config/nvim/init.vim<CR>
+nnoremap <F9> :w<CR>:!black %<CR>
 " nnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
 " nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
 " vnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
 " vnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
+
+
+echo "neovim config reloaded"
+
+" treesitter setup, must be the last line for some reason?
+lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
