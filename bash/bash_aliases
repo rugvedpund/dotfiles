@@ -1,7 +1,9 @@
 #!/bin/bash
 
+export PROMPT_COMMAND="history -a; history -n"
+
 export PATH="$HOME/.local/bin:$PATH"
-export LUSEE_DRIVE_DIR=~/Files/LuSEE/Drive/
+export LUSEE_DRIVE_DIR=~/Files/LuSEE_Drive/
 export LUSEE_OUTPUT_DIR=~/Files/LuSEE/simflows/outputs/
 export NF_WORKDIR='/home/rugved/Files/LuSEE/ml/'
 export NF_DIR='/home/rugved/Files/LuSEE/normalizingflows/'
