@@ -2,6 +2,13 @@
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+--
+
+-- Folding
+vim.opt.foldmethod = 'indent'
+vim.opt.foldenable = false
+vim.opt.foldnestmax = 2
+vim.opt.foldminlines = 1
 
 -- Make line numbers default
 vim.opt.number = true
