@@ -3,7 +3,8 @@
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('n', 'x', '_x', { desc = 'Delete character without yanking' })
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character without yanking' })
+vim.keymap.set('n', '<F9>', ':w<CR>:!black %<CR>')
 
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -20,5 +21,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- vim: ts=2 sts=2 sw=2 et
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'org',
+--   group = vim.api.nvim_create_augroup('orgmode_telescope_nvim', { clear = true }),
+--   callback = function()
+--     vim.keymap.set('n', '<leader>or', require('telescope').extensions.orgmode.refile_heading)
+--   end,
+-- })
+-- -- vim: ts=2 sts=2 sw=2 et
