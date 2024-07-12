@@ -6,7 +6,7 @@
 
 -- Folding
 vim.opt.foldmethod = 'indent'
-vim.opt.foldenable = false
+vim.opt.foldenable = true
 vim.opt.foldnestmax = 2
 vim.opt.foldminlines = 1
 
@@ -62,6 +62,6 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 5
 
 -- vim: ts=2 sts=2 sw=2 et

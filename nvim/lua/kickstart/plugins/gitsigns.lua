@@ -60,7 +60,7 @@ return {
           gitsigns.diffthis '@'
         end, { desc = '[g]it [D]iff against last commit' })
         -- Toggles
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle [g]it show [D]eleted' })
+        map('n', '<leader>gtD', gitsigns.toggle_deleted, { desc = '[T]oggle [g]it show [D]eleted' })
       end,
     },
   },

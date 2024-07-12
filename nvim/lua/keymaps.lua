@@ -21,6 +21,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- vim.keymap.set('n', '<leader>w', '<C-w>', { desc = '[w]indow controls' })
+-- vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = '[w]indow [=] equal size' })
+-- vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = '[w]indow [v]ertical split' })
+-- vim.keymap.set('n', '<leader>ws', '<C-w>s', { desc = '[w]indow [h]orizontal split' })
+
 --
 -- vim.api.nvim_create_autocmd('FileType', {
 --   pattern = 'org',

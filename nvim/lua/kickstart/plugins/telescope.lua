@@ -96,21 +96,27 @@ return {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
         }
-      end, { desc = '[S]earch [/] in Open Files' })
+      end, { desc = '[s]earch [/] in open files' })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
-      end, { desc = '[S]earch [N]eovim files' })
+      end, { desc = '[s]earch [n]eovim files' })
+      vim.keymap.set('n', '<leader>sp', function()
+        builtin.find_files { cwd = '~/Files/Projects/' }
+      end, { desc = '[s]earch [p]roject files' })
+      vim.keymap.set('n', '<leader>so', function()
+        builtin.find_files { cwd = '~/Files/orgfiles/' }
+      end, { desc = '[s]earch [o]rg files' })
 
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[s]earch [h]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[s]earch [k]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[s]earch [f]iles' })
-      vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[s]earch [s]elect telescope' })
+      -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[s]earch [s]elect telescope' })
       vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[s]earch current [w]ord' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[s]earch by [g]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
-      vim.keymap.set('n', '<leader>s.', builtin.resume, { desc = '[s]earch resume ("." for repeat)' })
+      vim.keymap.set('n', '<leader>ss', builtin.resume, { desc = '[s]earch last [s]earch' })
       vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[s]earch [r]ecent files' })
       vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[s] find existing [b]uffers' })
     end,
