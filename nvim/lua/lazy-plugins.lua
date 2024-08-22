@@ -1,17 +1,10 @@
--- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  'tpope/vim-surround',
+
+  'numToStr/Comment.nvim',
 
   require 'kickstart/plugins/gitsigns',
 
@@ -33,7 +26,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/treesitter',
 
-  require 'kickstart/plugins/debug',
+  -- require 'kickstart/plugins/debug',
 
   require 'kickstart/plugins/indent_line',
 
@@ -41,9 +34,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/autopairs',
 
-  require 'kickstart/plugins/neo-tree',
-
-  { 'numToStr/Comment.nvim', opts = {} },
+  -- require 'kickstart/plugins/neo-tree',
 
   { import = 'custom.plugins' },
 }, {

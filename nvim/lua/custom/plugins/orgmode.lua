@@ -7,11 +7,11 @@ return {
     require('orgmode').setup {
       org_agenda_files = '~/Files/orgfiles/**/*',
       org_default_notes_file = '~/Files/orgfiles/refile.org',
-      org_todo_keywords = { 'TODO', 'NOTE', '|', 'DONE' },
+      org_todo_keywords = { 'TODO', 'WAIT', '|', 'DONE', 'NOTE' },
       org_todo_keyword_faces = {
-        NOTE = ':foreground blue',
-        DELEGATED = ':background #FFFFFF',
-        TODO = ':background #000000 :foreground red :weight bold', -- overrides builtin color for `TODO` keyword
+        -- TODO = ':background #000000 :foreground red :weight bold', -- overrides builtin color for `TODO` keyword
+        -- WAIT = ':background #000000',
+        -- NOTE = ':foreground blue',
       },
       org_capture_templates = {
         w = {
@@ -22,6 +22,7 @@ return {
         e = {
           description = 'event calendar',
           template = '* %?\n %U',
+          target = '~/Files/orgfiles/calendar.org',
         },
         d = {
           description = 'dump',

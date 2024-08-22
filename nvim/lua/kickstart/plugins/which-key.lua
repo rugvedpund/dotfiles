@@ -21,20 +21,36 @@ return {
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[c]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[d]ocument', _ = 'which_key_ignore' },
-        -- ['<leader>r'] = { name = '[r]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
-        -- ['<leader>w'] = { name = '[w]orkspace', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[t]oggle', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
-        ['<leader>gh'] = { name = '[g]it [h]unk', _ = 'which_key_ignore' },
+      require('which-key').add {
+        {
+          { '<leader>c', group = '[c]ode' },
+          { '<leader>c_', hidden = true },
+          { '<leader>d', group = '[d]ocument' },
+          { '<leader>d_', hidden = true },
+          { '<leader>g', group = '[g]it' },
+          { '<leader>g_', hidden = true },
+          { '<leader>gh', group = '[g]it [h]unk' },
+          { '<leader>gh_', hidden = true },
+          { '<leader>s', group = '[s]earch' },
+          { '<leader>s_', hidden = true },
+          { '<leader>t', group = '[t]oggle' },
+          { '<leader>t_', hidden = true },
+        },
+        -- ['<leader>c'] = { name = '[c]ode', _ = 'which_key_ignore' },
+        -- ['<leader>d'] = { name = '[d]ocument', _ = 'which_key_ignore' },
+        -- -- ['<leader>r'] = { name = '[r]ename', _ = 'which_key_ignore' },
+        -- ['<leader>s'] = { name = '[s]earch', _ = 'which_key_ignore' },
+        -- -- ['<leader>w'] = { name = '[w]orkspace', _ = 'which_key_ignore' },
+        -- ['<leader>t'] = { name = '[t]oggle', _ = 'which_key_ignore' },
+        -- ['<leader>g'] = { name = '[g]it', _ = 'which_key_ignore' },
+        -- ['<leader>gh'] = { name = '[g]it [h]unk', _ = 'which_key_ignore' },
       }
       -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
+      require('which-key').add {
+        { '<leader>h', desc = 'Git [H]unk', mode = 'v' },
+      }
+      -- ['<leader>h'] = { 'Git [H]unk' },
+      -- }, { mode = 'v' })
     end,
   },
 }
