@@ -1,18 +1,28 @@
 #!/bin/bash
 
-export PROMPT_COMMAND="history -a; history -n"
+echo -en "\033]0;welcome to bmx rugved\a"
+# export PROMPT_COMMAND="history -a; history -n"
+export DEFAULTPS1=$PS1
+export PS1='${debian_chroot:+($debian_chroot)}[$(date "+%a %H:%M")] \[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \n \$ '
 
-export PATH="$HOME/.local/bin:$PATH"
-export LUSEE_DRIVE_DIR=~/Files/LuSEE_Drive/
-export LUSEE_OUTPUT_DIR=~/Files/LuSEE/simflows/outputs/
-export NF_WORKDIR='/home/rugved/Files/LuSEE/ml/'
-export NF_DIR='/home/rugved/Files/LuSEE/normalizingflows/'
-export BMX_DATA='/home/rugved/Files/LuSEE/BMX/data/'
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
-source ~/.my_api_keys
+export cfg="~/.config"
+
+# export PATH="$HOME/.local/bin:$PATH"
+# export LUSEE_DRIVE_DIR=~/Files/LuSEE_Drive/
+# export LUSEE_OUTPUT_DIR=~/Files/LuSEE/simflows/outputs/
+# export NF_WORKDIR='/home/rugved/Files/LuSEE/ml/'
+# export NF_DIR='/home/rugved/Files/LuSEE/normalizingflows/'
+# export BMX_DATA='/home/rugved/Files/LuSEE/BMX/data/'
+# source ~/.my_api_keys
 
 alias v='nvim'
-alias lg=lazygit
+alias tmux="tmux -f ~/.config/tmux/tmux.conf"
+alias lg='lazygit'
 alias p="python"
 alias du="du -h"
 alias df="df -h"
