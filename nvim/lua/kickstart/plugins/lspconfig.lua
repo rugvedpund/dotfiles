@@ -54,7 +54,7 @@ return {
           -- In this case, we create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = '[l]sp: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'lsp: ' .. desc })
           end
 
           -- Jump to the definition of the word under your cursor.
@@ -79,8 +79,8 @@ return {
           -- map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[d]ocument [s]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
-          --  Similar to document symbols, except searches over your entire project.
-          -- map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[w]orkspace [s]ymbols')
+          -- Similar to document symbols, except searches over your entire project.
+          map('<leader>sc', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[s]earch [c]ode symbols')
 
           -- Rename the code variable under your cursor.
           --  Most Language Servers support renaming across files, etc.

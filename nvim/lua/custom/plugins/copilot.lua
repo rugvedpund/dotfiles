@@ -8,7 +8,7 @@ return {
       -- panel = { enabled = true },
       panel = {
         enabled = true,
-        auto_refresh = false,
+        auto_refresh = true,
         keymap = {
           jump_prev = '[[',
           jump_next = ']]',
@@ -17,8 +17,8 @@ return {
           open = '<M-CR>',
         },
         layout = {
-          position = 'bottom', -- | top | left | right
-          ratio = 0.4,
+          position = 'right', -- | top | left | right
+          ratio = 0.3,
         },
       },
       suggestion = {
@@ -28,7 +28,7 @@ return {
         debounce = 75,
         keymap = {
           accept = '<C-j>',
-          accept_word = false,
+          accept_word = '<C-S-j>',
           accept_line = false,
           next = '<C-n>',
           prev = '<C-p>',

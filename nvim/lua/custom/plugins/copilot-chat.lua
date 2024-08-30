@@ -16,6 +16,7 @@ return {
           require('CopilotChat').ask(input, { selection = require('CopilotChat.select').buffer })
         end
       end, { desc = 'CopilotChat - Quick chat' }),
+      vim.keymap.set('v', '<leader>cc', ":CopilotChat '<,'>", { desc = 'CopilotChat - Chat selection' }),
     },
     -- See Commands section for default commands if you want to lazy load on them
   },

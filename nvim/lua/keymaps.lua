@@ -18,6 +18,9 @@ vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+vim.keymap.set('n', '<leader>/', ':%s///g<Left><Left>', { desc = 'Find and replace using last search pattern' })
+vim.keymap.set('v', '<leader>/', ':s///g<Left><Left>', { desc = 'Find and replace using last search pattern' })
+
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })

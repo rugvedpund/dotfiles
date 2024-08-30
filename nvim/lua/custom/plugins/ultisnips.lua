@@ -1,5 +1,6 @@
 return {
   'SirVer/ultisnips',
+  event = 'InsertEnter',
   config = function()
     vim.g.UltiSnipsExpandTrigger = '<tab>'
     vim.g.UltiSnipsJumpForwardTrigger = '<tab>'

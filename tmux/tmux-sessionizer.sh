@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Files/orgfiles ~/Files/LuSEE ~/dotfiles ~/Files/Projects ~/miniconda3/envs/ -maxdepth 1 -type d | fzf --reverse)
+    selected=$(find ~/files/projects ~/files/orgfiles ~/files/dotfiles ~/miniforge3/envs/ ~/.config/ ~/files/ -maxdepth 1 -type d | fzf --reverse)
 fi
 
 if [[ -z $selected ]]; then

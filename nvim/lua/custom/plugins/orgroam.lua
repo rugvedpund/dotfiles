@@ -10,8 +10,8 @@ return {
   config = function()
     -- Setup orgmode
     require('orgmode').setup {
-      org_agenda_files = '~/Files/orgfiles/**/*.org',
-      org_default_notes_file = '~/Files/orgfiles/dump.org',
+      org_agenda_files = '~/files/orgfiles/**/*.org',
+      org_default_notes_file = '~/files/orgfiles/dump.org',
       org_todo_keywords = { 'TODO', '|', 'DONE', 'NOTE' },
       org_todo_keyword_faces = {
         -- TODO = ':background #000000 :foreground red :weight bold', -- overrides builtin color for `TODO` keyword
@@ -22,24 +22,24 @@ return {
         w = {
           description = 'work',
           template = '* TODO %?\n %U',
-          target = '~/Files/orgfiles/work.org',
+          target = '~/files/orgfiles/work.org',
         },
         e = {
           description = 'event calendar',
           template = '* %?\n %U',
-          target = '~/Files/orgfiles/calendar.org',
+          target = '~/files/orgfiles/calendar.org',
         },
         d = {
           description = 'dump',
           template = '* NOTE %?\n %U',
-          target = '~/Files/orgfiles/dump.org',
+          target = '~/files/orgfiles/dump.org',
         },
       },
     }
 
     -- Setup org-roam
     require('org-roam').setup {
-      directory = '~/Files/orgfiles',
+      directory = '~/files/orgfiles',
       -- optional
       -- org_files = {
       --   '~/another_org_dir',

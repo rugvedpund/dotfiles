@@ -1,9 +1,38 @@
-snippet #-- "#--" bA
+
+snippet ;dd "docstring" bA
+"""
+$0
+"""
+endsnippet
+
+snippet ;psh "plt show" bA
+plt.show()
+$0
+endsnippet
+
+snippet ;plt "plt plot" bA
+plt.plot($0)
+endsnippet
+
+snippet ;ll "new comment line" bA
+# $0
+endsnippet
+
+snippet ;== "fstring var print" iA
+f"{${1:var}=}"$0
+endsnippet
+
+snippet ;pp "print" bA
+print($0)
+endsnippet
+
+snippet ;jj "comment line" bA
 ##--------------------------------------------------------------------##
 $0
 endsnippet
 
-snippet #%% "#%%" bA
+snippet ;cc "new cell" bA
+##--------------------------------------------------------------------##
 # %%
 
 $0
