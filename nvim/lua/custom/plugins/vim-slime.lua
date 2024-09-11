@@ -9,7 +9,7 @@ return {
       {
         ']c',
         function()
-          local delimiter = vim.g.slime_delimiter
+          local delimiter = vim.g.slime_cell_delimiter
           if delimiter then
             vim.cmd('execute "/" . escape("' .. delimiter .. '", "/")')
           else
@@ -21,7 +21,7 @@ return {
     },
     config = function()
       vim.g.slime_target = 'tmux'
-      vim.g.slime_cell_delimiter = '# %%'
+      vim.g.slime_cell_delimiter = '# ---'
       vim.g.slime_bracketed_paste = 1
     end,
   },

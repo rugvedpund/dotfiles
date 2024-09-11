@@ -11,9 +11,13 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 1000
 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
 vim.opt.foldmethod = 'indent'
 vim.opt.breakindent = true
-vim.opt.foldenable = false
+vim.opt.foldenable = true
 vim.opt.foldnestmax = 2
 vim.opt.foldminlines = 1
 

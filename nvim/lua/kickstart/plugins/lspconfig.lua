@@ -158,7 +158,7 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        basedpyright = {},
+        pyright = {},
         black = {},
         isort = {},
         rust_analyzer = {},
