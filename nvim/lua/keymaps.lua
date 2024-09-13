@@ -1,6 +1,7 @@
 --  See `:help vim.keymap.set()`
 
 vim.keymap.set('n', 'Q', '<Nop>', { desc = 'Disable [Q]uick command' })
+vim.keymap.set('n', '<leader>ww', ':w', { desc = '[w]rite' })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character without yanking' })
