@@ -38,18 +38,17 @@ return {
         builtin.find_files { cwd = '~/Files/orgfiles/' }
       end, { desc = '[s]earch [o]rg files' })
 
+      -- WARN:lspconfig.lua also has leader+s+... keymaps
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[s]earch [f]iles' })
       vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = '[s]earch w/ [g]rep' })
-      vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[s] find existing [b]uffers' })
       vim.keymap.set('n', '<leader>ss', builtin.buffers, { desc = '[s] find existing [b]uffers' })
-
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[s]earch [k]eymaps' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[s]earch [h]elp' })
       vim.keymap.set('n', '<leader>s.', builtin.resume, { desc = '[s]earch last [s]earch' })
       -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[s]earch [s]elect telescope' })
       -- vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[s]earch by [g]rep' })
       -- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
-      -- vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[s]earch [r]ecent files' })
+      vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[s]earch [r]ecent files' })
     end,
   },
 }

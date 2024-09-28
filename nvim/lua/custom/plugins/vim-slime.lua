@@ -7,7 +7,7 @@ return {
       { '<leader>rr', '<Plug>SlimeSendCell', desc = 'Slime Send Cell' },
       { '<leader>rl', '<Plug>SlimeLineSend<CR>', desc = 'Slime Send Line' },
       {
-        ']c',
+        ']j',
         function()
           local delimiter = vim.g.slime_cell_delimiter
           if delimiter then

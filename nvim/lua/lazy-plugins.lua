@@ -4,7 +4,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/gitsigns',
 
-  require 'kickstart/plugins/which-key',
+  -- require 'kickstart/plugins/which-key',
 
   require 'kickstart/plugins/telescope',
 
@@ -19,7 +19,7 @@ require('lazy').setup({
 
   require 'kickstart/plugins/todo-comments',
 
-  require 'kickstart/plugins/mini',
+  -- require 'kickstart/plugins/mini',
 
   require 'kickstart/plugins/treesitter',
 
