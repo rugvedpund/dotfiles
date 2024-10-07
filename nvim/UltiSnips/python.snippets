@@ -1,0 +1,69 @@
+snippet ;title "title" bA
+# ## $0
+#
+# ## status
+# - [ ] TODO: task 1: description of the first task.
+# - [ ] FIX: task 2: description of the second task.
+# - [x] task 3: description of the third task.
+#
+# ## notes
+# - important note 1.
+# - WARN: important note 2.
+# - BUG: important note 3.
+endsnippet
+
+global !p
+def max_len(text):
+    if not text:
+        return 0
+    return max(len(line) for line in text.splitlines())
+endglobal
+
+snippet ;bb "Create a dynamic comment box" wA
+`!p snip.rv = '# ┌' + '─' * (max_len(t[1]) + 2) + '┐'`
+# │ $1 │
+`!p snip.rv = '# └' + '─' * (max_len(t[1]) + 2) + '┘'`
+endsnippet
+
+snippet ;dd "docstring" bA
+"""
+$0
+"""
+endsnippet
+
+snippet ;psh "plt show" bA
+plt.show()
+$0
+endsnippet
+
+snippet ;plt "plt plot" bA
+plt.plot($0)
+endsnippet
+
+snippet ;figax "plt figure and axis" bA
+fig, ax = plt.subplots($1, $2, figsize=(`!p t[1]*3`, `!p t[2]*3`))
+endsnippet
+
+snippet ;ll "new comment line" bA
+# $0
+endsnippet
+
+snippet ;== "fstring var print" iA
+f"{${1:var}=}"$0
+endsnippet
+
+snippet ;pp "print" bA
+print($0)
+endsnippet
+
+snippet ;jj "comment line" bA
+##--------------------------------------------------------------------##
+endsnippet
+
+snippet ;cc "new cell" bA
+# %%
+
+$0
+
+# %%
+endsnippet
