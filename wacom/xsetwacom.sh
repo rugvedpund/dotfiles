@@ -8,12 +8,15 @@ STY="$DEVICE Pen stylus"
 echo "configuring $STY"
 xsetwacom --shell set "$STY" Rotate none
 xsetwacom --shell set "$STY" CursorProximity 30
+xsetwacom -s set "$STY" Button 2 "button +2"
+xsetwacom -s set "$STY" Button 3 "key p"
+xsetwacom --shell set "$STY" MapToOutput HEAD-1
 echo
 
 echo "configuring $PAD"
-xsetwacom --shell set "$PAD" Button 1 "key +ctrl z -ctrl"
-xsetwacom --shell set "$PAD" Button 2 "key +ctrl +shift z -shift -ctrl"
-xsetwacom --shell set "$PAD" Button 3 "button +4 " # scroll up
-xsetwacom --shell set "$PAD" Button 8 "button +5 " # scroll down
-xsetwacom --shell set "$PAD" MapToOutput HEAD-0
+xsetwacom --shell set "$PAD" Suppress 5
+xsetwacom --shell set "$PAD" Button 1 "key e"
+xsetwacom --shell set "$PAD" Button 2 "key o"
+xsetwacom --shell set "$PAD" Button 3 "button 5 5 " # scroll down
+xsetwacom --shell set "$PAD" Button 8 "button 4 4 " # scroll up
 echo
