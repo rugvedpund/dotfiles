@@ -1,31 +1,4 @@
-snippet ;title "title" bA
-# ## $0
-#
-# ## status
-# - [ ] TODO: task 1: description of the first task.
-# - [ ] FIX: task 2: description of the second task.
-# - [x] task 3: description of the third task.
-#
-# ## notes
-# - important note 1.
-# - WARN: important note 2.
-# - BUG: important note 3.
-endsnippet
-
-global !p
-def max_len(text):
-    if not text:
-        return 0
-    return max(len(line) for line in text.splitlines())
-endglobal
-
-snippet ;bb "Create a dynamic comment box" wA
-`!p snip.rv = '# ┌' + '─' * (max_len(t[1]) + 2) + '┐'`
-# │ $1 │
-`!p snip.rv = '# └' + '─' * (max_len(t[1]) + 2) + '┘'`
-endsnippet
-
-snippet ;dd "docstring" bA
+snippet ;doc "docstring" bA
 """
 $0
 """
@@ -56,14 +29,21 @@ snippet ;pp "print" bA
 print($0)
 endsnippet
 
-snippet ;jj "comment line" bA
-##--------------------------------------------------------------------##
+snippet ;-- "comment line" bA
+##----------------------------------------------------------------------------##
 endsnippet
 
 snippet ;cc "new cell" bA
 # %%
 
 $0
+
+# %%
+endsnippet
+
+snippet ;md "new markdown cell" bA
+# %% [markdown]
+# $0
 
 # %%
 endsnippet

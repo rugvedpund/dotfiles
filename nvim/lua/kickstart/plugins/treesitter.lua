@@ -4,18 +4,22 @@ return {
     build = ':TSUpdate',
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'markdown', 'python' },
-      ignore_install = { 'org', 'latex' },
-      -- Autoinstall languages that are not installed
+      ignore_install = { 'org', 'latex', 'gitcommit' },
       auto_install = true,
       highlight = {
         enable = true,
         disable = { 'latex', 'org' },
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'latex', 'org' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = true, disable = { 'latex', 'org' } },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          -- init_selection = 'gnn',
+          node_incremental = 'v',
+          node_decremental = 'V',
+        },
+      },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

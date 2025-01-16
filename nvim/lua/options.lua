@@ -4,6 +4,9 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
+vim.opt.wildmode = 'longest:full,full'
+vim.opt.wildoptions = 'pum'
+
 vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -26,15 +29,33 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 1000
 
 vim.opt.foldmethod = 'indent'
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldcolumn = '0'
+vim.opt.foldtext = ''
 vim.opt.foldenable = false
 vim.opt.foldnestmax = 2
-vim.opt.foldminlines = 1
+vim.opt.foldminlines = 2
+vim.opt.foldlevelstart = 1
 
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = true
-vim.opt.clipboard = 'unnamedplus'
+
+vim.opt.clipboard = 'unnamed'
+-- vim.g.clipboard = {
+--   name = 'xsel_custom',
+--   copy = {
+--     ['+'] = 'xsel -ib',
+--     ['*'] = 'xsel -ib',
+--   },
+--   paste = {
+--     ['+'] = 'xsel -ob',
+--     ['*'] = 'xsel -ob',
+--   },
+--   cache_enabled = 1,
+-- }
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
@@ -42,10 +63,12 @@ vim.opt.scrolloff = 8
 -- vim.opt.colorcolumn = '80'
 vim.opt.cursorline = true
 
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.inccommand = 'split' -- Preview substitutions live, as you type!
+
+vim.diagnostic.config { underline = false }
 
 -- vim: ts=2 sts=2 sw=2 et

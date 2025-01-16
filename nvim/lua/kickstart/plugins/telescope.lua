@@ -32,10 +32,10 @@ return {
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[s]earch [n]eovim config files' })
       vim.keymap.set('n', '<leader>sp', function()
-        builtin.find_files { cwd = '~/Files/Projects/' }
+        builtin.find_files { cwd = '~/files/projects/' }
       end, { desc = '[s]earch [p]roject files' })
       vim.keymap.set('n', '<leader>so', function()
-        builtin.find_files { cwd = '~/Files/orgfiles/' }
+        builtin.find_files { cwd = '~/files/orgfiles/' }
       end, { desc = '[s]earch [o]rg files' })
 
       -- WARN:lspconfig.lua also has leader+s+... keymaps
@@ -45,10 +45,11 @@ return {
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[s]earch [k]eymaps' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[s]earch [h]elp' })
       vim.keymap.set('n', '<leader>s.', builtin.resume, { desc = '[s]earch last [s]earch' })
-      -- vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[s]earch [s]elect telescope' })
-      -- vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[s]earch by [g]rep' })
-      -- vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
+      vim.keymap.set('n', '<leader>s:', builtin.builtin, { desc = '[s]earch [b]uiltin commands' })
+      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[s]earch [d]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.oldfiles, { desc = '[s]earch [r]ecent files' })
+      vim.keymap.set('n', '<leader>sg', builtin.git_bcommits, { desc = '[s]earch [g]it commits' })
+      -- vim.keymap.set('n', '<leader>gg', builtin.git_status, { desc = '[s]earch [g]it status' })
     end,
   },
 }

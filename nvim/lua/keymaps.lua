@@ -1,16 +1,25 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.keymap.set('n', '<leader>on', ':!nvidia-smi', { desc = 'Show GPU usage' })
+
+vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { desc = 'save file' })
+-- vim.keymap.set('n', '<leader>p', '"_dP', { desc = 'paste without yanking' })
+
+-- vim.keymap.set('x', '<leader>cf', ':!column -t -s= -o= -l2<cr>')
+
 vim.keymap.set('n', '-', '<CMD>Oil<CR>')
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join lines' })
+vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+vim.keymap.set('x', '>', '>gv', { desc = 'Indent selected lines' })
+vim.keymap.set('x', '<', '<gv', { desc = 'Unindent selected lines' })
 
 vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character without yanking' })
 vim.keymap.set('n', 'Y', 'yg$', { desc = 'Yank to end of line' })
 
--- vim.keymap.set('n', '<C-j>', ':bnext<CR>', { desc = 'Next buffer' })
--- vim.keymap.set('n', '<C-k>', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { desc = 'Previous buffer' })
 
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down half a page' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up half a page' })
@@ -42,6 +51,33 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Copilot Chat
+vim.keymap.set('n', '<leader>at', '<cmd>CopilotChatToggle<cr>')
+vim.keymap.set('n', '<leader>aa', function()
+  local input = vim.fn.input 'Quick Chat: '
+  local selections = require 'CopilotChat.select'
+  if input ~= '' then
+    require('CopilotChat').ask(input, { selection = selections.buffer })
+  end
+end)
+vim.keymap.set('x', '<leader>aa', ':CopilotChat ')
+
+vim.keymap.set('n', '<leader>ap', function()
+  local actions = require 'CopilotChat.actions'
+  local selections = require 'CopilotChat.select'
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions { selection = selections.buffer })
+end)
+
+vim.keymap.set('x', '<leader>ap', function()
+  local actions = require 'CopilotChat.actions'
+  local selections = require 'CopilotChat.select'
+  require('CopilotChat.integrations.telescope').pick(actions.prompt_actions { selection = selections.visual })
+end)
+
+-- jupytext
+vim.keymap.set('n', '<leader>jj', ':!jupytext --sync %<CR>', { desc = 'Sync' })
+vim.keymap.set('n', '<leader>jr', ':!jupytext --sync --execute % &<CR>', { desc = 'Sync and Run' })
 
 -- vim.keymap.set('n', '<leader>w', '<C-w>', { desc = '[w]indow controls' })
 -- vim.keymap.set('n', '<leader>w=', '<C-w>=', { desc = '[w]indow [=] equal size' })
